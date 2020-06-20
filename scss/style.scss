@@ -1,0 +1,127 @@
+*{
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
+
+body {
+  font-family: 'Marck Script', cursive;
+  font-size: 20px;
+}
+
+.container-grid {
+  display: grid;
+  height: 100vh;
+  grid-template-areas: 
+  "h h h h h h h h"
+  "s s a a a b b b"
+  "s s a a a b b b"
+  "s s m m m m m m"
+  "s s m m m m m m"
+  "s s m m m m m m"
+  "s s m m m m m m"
+  "s s m m m m m m"
+  "s s m m m m m m"
+  "f f f f f f f f";
+}
+
+.header {
+  display: grid;
+  grid-area: h;
+  background:#d8d8d8;
+  padding: 6px 25px;
+  grid-template-columns: 100px 200px 1fr 200px;
+  gap: 0 25px;
+  border: 1.5px solid #a19899;
+
+  &__item {
+    background: #920000;
+    color:#fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &--right{
+      grid-column: 4;
+    }
+    border: 1px solid grey;
+  }
+}
+
+.sidebar {
+  display: grid;
+  grid-area: s;
+  background:#c9bfbe;
+  padding: 15px 15px 35px;
+  grid-template-rows: 1fr 2fr 6fr;
+  gap: 15px 0;
+  border: 1.5px solid #a19899;
+
+  &__item {
+    background: #e4d9a1;
+    color:#000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
+  }
+}
+
+.section {
+  display: grid;
+  &--grey{
+    grid-area: a;
+    background:#dedacf;
+    padding: 15px;
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-columns: repeat(25, 1fr);
+    gap: 5px;
+    border: 1.5px solid #a19899;
+  }
+  &--brown{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: b;
+    background: #aba897;
+  }
+  
+  &__item {
+    background: #000;
+    border: 1px solid grey;
+  }
+}
+
+.main {
+  display: grid;
+  grid-area: m;
+  background:#decece;
+  padding: 20px 30px 40px 30px;
+  grid-template-rows: repeat(5, 1fr) 7px;
+  grid-template-columns: repeat(4, 1fr 2fr);
+  gap: 15px;
+  border: 1.5px solid #a19899;
+
+  &__item {
+    background: #a0e5d3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
+
+    &--bottom {
+      grid-area: 6/1/6/9;
+    }
+
+    &--green {
+      background: #0f866a;
+      grid-area: 3/5/3/8;
+    }
+  }
+}
+
+.footer {
+  grid-area: f;
+  background:#d8d8d8;
+  border: 1.5px solid #a19899;
+}
+
